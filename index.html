@@ -3,26 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style type="text/css">
-        #generationCounter {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-
-        #speedSliderContainer, #resolutionSliderContainer, #navigationBar {
-            text-align: center;
-        }
-
-        #speedSlider, #speedText, #resolutionSlider, #resolutionText {
-            display: inline;
-        }
-
-        #buttons {
-            padding-bottom: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script src="Universe.js"></script>
 </head>
 <body onresize="canvasInit()">
@@ -40,7 +21,7 @@
     </div>
     <br>
     <div id="buttons">
-        <button onclick="createRandomUniverse()">SEED!</button>
+        <button onclick="createRandomUniverse()">Seed</button>
         <button onclick="init()">Clear</button>
         <button onclick="ageAndDraw()">Step</button>
         <button onclick="animateCanvas()">Play</button>
