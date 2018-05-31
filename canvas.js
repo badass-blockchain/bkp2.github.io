@@ -122,6 +122,11 @@ function ageAndDraw(){
     generationCounter.innerHTML = "Generation " + universe.generation;
 }
 
+function createRandomUniverse(){
+    universe.randomiseUniverse();
+    redraw();
+}
+
 function animateCanvas(){
     interval = setInterval(ageAndDraw, agingSpeed);
 }

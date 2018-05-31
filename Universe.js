@@ -93,15 +93,21 @@ class Universe {
         this.previous_state = create2DArray(this.width, this.height);
     }
 
-
+    randomiseUniverse(){
+        this.state = create2DArray(this.width,this.height,true);
+    }
 }
 
-function create2DArray(n, m) {
+function create2DArray(n, m, random=false) {
     let outerArr = [];
     for (let i = 0; i < n; ++i) {
         let innerArr = [];
         for (let j = 0; j < m; ++j) {
-            innerArr.push(false);
+            if (!random){
+                innerArr.push(false);
+            } else {
+                innerArr.push(Math.random() >= 0.5);
+            }
         }
         outerArr.push(innerArr);
     }
