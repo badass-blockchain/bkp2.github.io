@@ -97,10 +97,10 @@ function redraw() {
     squaresArray.forEach(square => {square.draw();});
 }
 
-function canvasInit(){
-    canvas.width = innerWidth;
-    canvas.height = innerHeight*0.7;
-    init();
+function ageAndDraw(){
+    universe.ageOneGeneration();
+    redraw();
+    generationCounter.innerHTML = "Generation " + universe.generation;
 }
 
 function init() {
@@ -112,17 +112,18 @@ function init() {
     redraw();
 }
 
+function canvasInit(){
+    canvas.width = innerWidth;
+    canvas.height = innerHeight*0.7;
+    init();
+}
+
 function drawSquare(cell){
     createSquare(cell, universe.isAlive(cell)).draw();
 }
 
-function ageAndDraw(){
-    universe.ageOneGeneration();
-    redraw();
-    generationCounter.innerHTML = "Generation " + universe.generation;
-}
-
 function createRandomUniverse(){
+    init();
     universe.randomiseUniverse();
     redraw();
 }
@@ -137,5 +138,4 @@ function stopAnimate(){
 }
 
 canvasInit();
-init();
 redraw();

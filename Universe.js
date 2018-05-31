@@ -88,11 +88,6 @@ class Universe {
         return (number + mod) % mod;
     }
 
-    clearState() {
-        this.state = create2DArray(this.width, this.height);
-        this.previous_state = create2DArray(this.width, this.height);
-    }
-
     randomiseUniverse(){
         this.state = create2DArray(this.width,this.height,true);
     }
@@ -106,6 +101,7 @@ function create2DArray(n, m, random=false) {
             if (!random){
                 innerArr.push(false);
             } else {
+                //creating random values for the universe grid
                 innerArr.push(Math.random() >= 0.5);
             }
         }
